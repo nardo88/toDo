@@ -2,6 +2,9 @@ import React from 'react';
 import Free from '../Free/Free';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {removeTodoAC} from '../../data/reducer';
+import { withRouter } from 'react-router';
+
 
 const mapStateToProps = state => {
     return {
@@ -9,21 +12,22 @@ const mapStateToProps = state => {
     }
 }
 
-
-
-
 const Main = (props) => {
+    
     return (
         <>
             <div className="container">
-                <Route path="/free" render={() => <Free data={props.state.free} />} />
-                <Route path="/ufk" render={() => <Free data={props.state.ufk} />}/>
+                <Route exact path="/free" render={() => <Free {...props} data={props.state.free} />} />
+                <Route exact path="/" render={() => <Free {...props} data={props.state.free} />} />
+                <Route exact path="/ufk" render={() => <Free {...props} data={props.state.ufk} />}/>
             </div>
 
         </>
     )
 }
 
-const MainContainer = connect(mapStateToProps, null)(Main)
+
+const MainWithRouter = withRouter(Main)
+const MainContainer = connect(mapStateToProps, { removeTodoAC })(MainWithRouter)
 
 export default MainContainer;

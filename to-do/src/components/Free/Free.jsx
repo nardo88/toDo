@@ -1,15 +1,15 @@
 import React from 'react';
 import List from '../List/List';
 
-const Free = ({data}) => {
+const Free = ({data, removeTodoAC, location}) => {
 
     
 
 
     return (
-        <>
-          <List data={data} />
-        </>
+        <div >
+           <List location={location} removeTodoAC={removeTodoAC} data={data} />
+        </div>
     )
 }
 
