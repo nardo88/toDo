@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ListItem = ({data, removeTodoAC, location}) => {
+const ListItem = ({data, removeTodoAC, location, removeUfkTodoAC}) => {
     function removeItem (e) {
         if (location.pathname === '/free' || location.pathname === '/'){
             removeTodoAC(+e.target.dataset.id);
         }
         if (location.pathname === '/ufk'){
-            console.log('Пиши новый actioncreater');
+            removeUfkTodoAC(+e.target.dataset.id);
         }
     }
 
