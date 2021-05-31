@@ -29,11 +29,11 @@ button {
 
 .header {
 
-    &__title{
-    font-family: 'Roboto';
-    font-size: 30px;
-    text-align: center;
-    margin-top: 30px;
+    &__title {
+        font-family: 'Roboto';
+        font-size: 30px;
+        text-align: center;
+        margin-top: 30px;
 
     }
 
@@ -169,6 +169,7 @@ button {
     &__title {
         font-size: 18px;
         color: #5c5c5c;
+        user-select: none;
     }
 
     // .item__control
@@ -237,7 +238,7 @@ button {
             fill: #b4b4b4;
         }
 
-     
+
 
     }
 
@@ -398,6 +399,121 @@ button {
     }
 }
 
+.overlay-update {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+
+    &--active {
+        visibility: visible;
+
+        .updateTask {
+            transform: translateY(0);
+
+        }
+    }
+}
+
+.updateTask {
+    padding: 30px;
+    min-width: 400px;
+    background: #f6f6f6;
+    border-radius: 10px;
+    position: relative;
+    transform: translateY(-200%);
+    transition: .3s;
+
+    // .updateTask__caption
+
+    &__caption {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Roboto';
+        margin-top: 0;
+    }
+
+    // .updateTask__form
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .updateTask__title
+
+    &__title {
+        padding: 10px;
+        outline: none;
+        border: 1px solid #dad9dc;
+        border-radius: 4px;
+        resize: none;
+        color: #1abc9c;
+        font-size: 16px;
+
+        &:focus {
+            border-color: #1abc9c;
+        }
+    }
+
+    // .updateTask__description
+
+    &__description {
+        margin: 20px 0;
+        min-height: 150px;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #dad9dc;
+        border-radius: 4px;
+        resize: none;
+        color: #1abc9c;
+        font-size: 16px;
+
+        &:focus {
+            border-color: #1abc9c;
+        }
+    }
+
+    // .updateTask__btn
+
+    &__btn {
+        background: #1abc9c;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        border: 1px solid #1abc9c;
+        transition: .3s;
+        align-self: flex-end;
+    }
+
+    // .updateTask__close
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        width: 14px;
+        height: 14px;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        color: #5c5c5c;
+    }
+}
 
 
 
@@ -434,6 +550,39 @@ button {
 
 
 
+.context-menu {
+    display: none;
+    position: absolute;
+
+
+    // .context-menu__list
+
+    &__list {}
+
+    // .context-menu__item
+
+    &__item {
+        font-family: 'Roboto';
+        padding: 5px 10px;
+        border: 1px solid #5c5c5c;
+        cursor: pointer;
+        transition: .3s;
+        border-radius: 4px;
+        color: #5c5c5c;
+        background-color: #f6f6f6;
+        user-select: none;
+
+        &:first-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            color: #f6f6f6;
+            background-color: #5c5c5c;
+        }
+    }
+}
+
 
 
 
@@ -465,7 +614,7 @@ button {
         padding: 0 15px;
     }
 
-    .item__info{
+    .item__info {
         flex-shrink: 1;
         padding: 0px 10px;
     }
@@ -475,29 +624,32 @@ button {
         align-self: stretch;
         min-height: 100%;
         height: auto;
-        
+
     }
-    .item__title{
+
+    .item__title {
         font-size: 14px;
     }
 
-    .item__control{
+    .item__control {
         flex-shrink: 0;
         align-self: stretch;
         min-height: 100%;
         height: auto;
     }
-    .item__open, .item__delete{
+
+    .item__open,
+    .item__delete {
         min-height: 50px;
         height: auto;
 
     }
 
-    .overlay{
+    .overlay, .overlay-update {
         padding: 10px;
     }
 
-    .addTask{
+    .addTask, .updateTask {
         min-width: 100%;
         border-radius: 5px;
         padding: 30px 15px;
@@ -506,19 +658,19 @@ button {
     .auth {
         padding: 0 10px;
         // .auth__form
-    
+
         &__form {
             width: 100%;
         }
-    
+
         // .auth__input
-    
+
         &__input {
             margin-bottom: 20px;
         }
-    
+
         // .auth__btn
-    
+
         &__btn {
             text-transform: uppercase;
             padding: 10px 40px;
@@ -527,9 +679,9 @@ button {
     }
 }
 
-
-@media (min-width: 720px){
-    .addTask__btn{
+// ховер эффекты================================================================= HOVER =========================
+@media (min-width: 720px) {
+    .addTask__btn {
         &:hover {
             background: #fff;
 
@@ -537,7 +689,7 @@ button {
         }
     }
 
-    .item__delete{
+    .item__delete {
         &:hover {
             svg {
                 fill: #1abc9c;
@@ -546,7 +698,7 @@ button {
         }
     }
 
-    .item__open{
+    .item__open {
         &:hover {
             svg {
                 transform: scale(1.2);
@@ -558,7 +710,7 @@ button {
         }
     }
 
-    .add__task{
+    .add__task {
         &:hover {
             background: #fff;
 

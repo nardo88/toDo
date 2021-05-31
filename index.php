@@ -134,6 +134,25 @@
         </div>
     </div>
 
+    <div class="context-menu">
+        <ul class="context-menu__list">
+            <li class="context-menu__item update">Изменить</li>
+            <li class="context-menu__item delete">Удалить</li>
+        </ul>
+    </div>
+
+    <div class="overlay-update">
+        <div class="updateTask">
+            <h3 class="updateTask__caption">Изменить запись</h3>
+            <form action="#" class="updateTask__form">
+                <input class="updateTask__title" type="text" required name="title" autocomplete="off"> 
+                <textarea class="updateTask__description" name="description" id="description" required></textarea>
+                <button class="updateTask__btn">Сохранить</button>
+            </form>
+            <button class="updateTask__close">&#10006;</button>
+        </div>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 
