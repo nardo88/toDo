@@ -4,7 +4,7 @@
     ini_set('session.gc.maxlifetime', 3600);
     // устанавливаем соединение к БД где хранятся логины и пароли
     // всех зарегистрирвоанных пользователей
-    $connection = new PDO ('mysql:host=localhost; dbname=todo; charset=utf8', 'root', '');
+    $connection = new PDO ('mysql:host=localhost; dbname=nardo146_todo; charset=utf8', 'nardo146_todo', 'M2q1Y6g3');
     // с помощью SQL запроса получаем всех пользователей из таблицы users
     $login = $connection->query('SELECT * FROM `users`');
     // если в глобальном объекте $_POST есть свойство - login
