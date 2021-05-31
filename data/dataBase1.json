@@ -1,0 +1,40 @@
+{
+    "free": {
+        "data": {
+            "0": {
+                "id": 1,
+                "title": "title 1",
+                "description": "description 1"
+            },
+            "1": {
+                "id": 2,
+                "title": "title 2",
+                "description": "description 2"
+            },
+            "2": {
+                "id": 3,
+                "title": "title 3",
+                "description": "description 3"
+            },
+            "3": {
+                "id": 4,
+                "title": "title 4",
+                "description": "description 4"
+            },
+            "5": {
+                "title": null,
+                "description": null,
+                "id": 5
+            }
+        },
+        "caption": "freelanse"
+    },
+    "ufk": {
+        "data": [{
+            "id": 1,
+            "title": "title 1",
+            "description": "description 1"
+        }],
+        "caption": "UFK"
+    }
+}
